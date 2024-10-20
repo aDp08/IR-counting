@@ -1,0 +1,46 @@
+#include <Wire.h>
+#include <LiquidCrystal_I2C.h>
+
+// Initialize the LCD with the appropriate I2C address and pin mapping
+LiquidCrystal_I2C lcd(0x27, 2, 1, 0, 4, 5, 6, 7, 3, POSITIVE); //lcd is a user-defined name
+
+int pirPin = 2; // PIR sensor input pin
+int buzzerPin = 5; // Buzzer output pin
+
+int pirState = LOW; // Initial state of PIR sensor
+int itemCount = 0; // Initial item count
+
+void setup() {
+  pinMode(pirPin, INPUT);
+  pinMode(buzzerPin, OUTPUT);
+  
+  lcd.begin(16, 2); // Set up the LCD's number of columns and rows
+  lcd.print("Item Counter");
+  delay(2000);
+  lcd.clear();
+  lcd.print("Count: ");
+  lcd.print(itemCount);
+}
+
+void loop() {
+  int motionDetected = digitalRead(pirPin); // Read PIR sensor status
+
+  if (motionDetected == HIGH) {
+    if (pirState == LOW) {
+      itemCount++; // Increase item count on motion detection
+      lcd.clear();
+      lcd.print("Item Count: ");
+      lcd.print(itemCount);
+      tone(buzzerPin, 1000); // Emit a sound for item count
+      delay(500); // Delay to allow for motion clearance
+      noTone(buzzerPin);
+      pirState = HIGH; // Update PIR state
+    }
+  } else {
+    if (pirState == HIGH) {
+      pirState = LOW; // Reset PIR state when no motion is detected
+    }
+  }
+
+  delay(200); // Small delay to stabilize sensor readings
+}
