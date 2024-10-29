@@ -1,2 +1,3 @@
 IR BASED SENSOR:  
- PLEASE CLICK ON **VIEW RAW** TO DOWNLOAD VIDEO AND HAVE A LOOK AT MY WORK
+ VISIT THIS URL FOR VIDEO BASE:
+ **https://github.com/aDp08/IR-counting/raw/refs/heads/main/IR%20Sensor%20VIDEO.mp4**
