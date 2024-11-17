@@ -3,4 +3,4 @@ IR BASED SENSOR:
  **https://github.com/aDp08/IR-counting/raw/refs/heads/main/IR%20Sensor%20VIDEO.mp4**
 VEGETABLES AND FRUITS FRESHNESS DETECTION:
  Practical Implementation:
-  **https://github.com/aDp08/IR-counting/raw/refs/heads/main/12.mp4**
+  **https://github.com/aDp08/IR-counting/raw/refs/heads/main/YOLO%20detection.mp4**
